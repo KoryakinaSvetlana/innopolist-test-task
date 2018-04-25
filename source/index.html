@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="css/style.css" rel="stylesheet" />
+  <title>Криптографический стенд</title>
+</head>
+<body>
+  <header class="page-header">
+    <div class="logo">
+      <img src="img/logo.png">
+      <span>CRYPTOGRAMM</span>
+    </div>
+    <nav class="navigation">
+      <button class="navigation__toggle">konstantin_konstantinopolsky</button>
+      <ul class="navigation__popup">
+        <li><a>Мобильное приложение</a></li>
+        <li><a>Выход</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="page-context">
+    <h1 class="visually-hidden">Страница криптоопераций</h1>
+    <ol class="steps">
+      <li class="steps__item">
+        <h2>Загрузите или выберите файл для подписи</h2>
+
+        <h3>Загрузите с компьютера:</h3>
+
+        <form class="box" method="post" action="" enctype="multipart/form-data">
+          <div class="box__input">
+            <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+            <label for="file"><span class="box__dragndrop">Перетащите файлы сюда или</span><strong>выберите на компьютере</strong></label>
+            <button class="box__button" type="submit">Upload</button>
+          </div>
+          <div class="box__uploading">Загрузка...</div>
+          <div class="box__success">Готово!</div>
+          <div class="box__error">Ошибка! <span></span>.</div>
+        </form>
+
+        <p>Или</p>
+
+        <h3>Выберите из списка:</h3>
+        <div>
+          <table>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Текстовый документ.txt<span>29 байт</span></td>
+              <td>от 13.10.2017</td></tr>
+            <tr>
+              <td><label></label><input type="checkbox" checked></td>
+              <td>Текстовый документ.doc<span>11.17 Кб</span></td><td>от 13.10.2017</td>
+            </tr>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Изображение.jpg<span>4.08 Кб</span></td>
+              <td>от 13.10.2017</td></tr>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Гипертекстовая страница.html<span>46 байт</span></td>
+              <td>от 13.10.2017</td>
+            </tr>
+          </table>
+        </div>
+
+
+        <h3>Загруженные файлы:</h3>
+
+        <div>
+          <table>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Мой текстовый документ.txt<span>29 байт</span></td>
+              <td>от 13.10.2017</td></tr>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Мой текстовый документ.doc<span>11.17 Кб</span></td><td>от 13.10.2017</td>
+            </tr>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Мое изображение.jpg<span>4.08 Кб</span></td>
+              <td>от 13.10.2017</td></tr>
+            <tr>
+              <td><label></label><input type="checkbox"></td>
+              <td>Моя гипертекстовая страница.html<span>46 байт</span></td>
+              <td>от 13.10.2017</td>
+            </tr>
+          </table>
+        </div>
+
+      </li>
+      <li class="steps__item">
+        <h2>Выберите операцию</h2>
+        <ul class="steps__operations">
+          <li >Подписать</li>
+          <li>Проверить подпись</li>
+          <li>Зашифровать</li>
+          <li>Расшифровать</li>
+        </ul>
+      </li>
+      <li class="steps__item">
+        <h2>Выберите вид подписи</h2>
+
+        <p>
+          <strong>Присоединенная</strong>
+          Подпись будет доступна в этом же файле
+        </p>
+
+        <div>
+          <input type="checkbox">
+        </div>
+
+        <p>
+          <strong>Отсоединенная</strong>
+          Подпись будет доступна отдельным файлом
+        </p>
+      </li>
+    </ol>
+    <button class="button">Выполнить операцию</button>
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__logo">
+      <img src="img/logo-taxnet.png">
+      <p>
+        © ЗАО «ТаксНет» 2001–2017
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

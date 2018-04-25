@@ -1,0 +1,25 @@
+.steps {
+  counter-reset: listCounter;
+}
+
+.steps__item {
+  list-style: none;
+
+  &:before {
+    counter-increment: listCounter;
+    content: counter(listCounter);
+    color: @font-color-white;
+    background: @background-color-green;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 10px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+.steps__operations {
+  .reset-list();
+}

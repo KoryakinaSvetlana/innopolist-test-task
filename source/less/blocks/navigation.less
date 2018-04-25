@@ -1,0 +1,28 @@
+.navigation {
+
+}
+
+.navigation__toggle {
+  position: relative;
+
+  &:before {
+    content: "k";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: @font-color-white;
+    text-transform: uppercase;
+    background-color: @background-color-blue;
+    border-radius: 50%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid @border-color-light-gray;
+    border-bottom: 1px solid @border-color-light-gray;
+    transform: rotate(-45deg);
+  }
+}
