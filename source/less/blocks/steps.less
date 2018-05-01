@@ -1,25 +1,146 @@
 .steps {
   counter-reset: listCounter;
+  margin: 0;
+  padding: 0;
+  margin-left: 35px;
+  padding-top: 46px;
 }
 
 .steps__item {
   list-style: none;
 
-  &:before {
+  &::before {
     counter-increment: listCounter;
     content: counter(listCounter);
+    font-size: 18px;
+    line-height: 40px;
     color: @font-color-white;
     background: @background-color-green;
     display: inline-block;
+    border-radius: 50%;
     text-align: center;
     margin: 5px 10px;
-    line-height: 40px;
     width: 40px;
     height: 40px;
   }
-}
 
+  &:first-of-type {
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+  }
+
+  h4 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 17px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+  }
+}
 
 .steps__operations {
   .reset-list();
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 65px;
+  padding-top: 20px;
+  padding-bottom: 66px;
+}
+
+.steps__operation {
+  margin-right: 30px;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 220px;
+    height: 103px;
+    text-align: center;
+    padding-top: 58px;
+    line-height: 20px;
+    border-radius: 3px;
+    background-color: @background-color-white;
+    border: 1px solid @border-color-blue-gray;
+    box-shadow: 0 0 5px 1px rgba(31, 45, 61, 0.05);
+    background-repeat: no-repeat;
+    background-position: top 20px center;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @background-color-light-blue;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 21px;
+    fill: @background-color-light-gray;
+  }
+
+  input[type="radio"]:checked + label {
+    color: @font-color-white;
+    background-color: @background-color-blue;
+    border: none;
+
+    svg {
+      fill: @background-color-white;
+    }
+  }
+
+  &--sign {
+    svg {
+      top: 23px;
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &--check {
+    svg {
+      top: 22px;
+      width: 31px;
+      height: 31px;
+    }
+  }
+
+  &--encode {
+    svg {
+      width: 22px;
+      height: 29px;
+    }
+  }
+
+  &--decode {
+    svg {
+      width: 22px;
+      height: 29px;
+    }
+  }
 }

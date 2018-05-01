@@ -1,28 +1,120 @@
 .navigation {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-top: 31px;
 
+  &--open {
+    .navigation__toggle {
+      &::after {
+        top: 12px;
+        border-left-color: @border-color-blue;
+        border-bottom-color: @border-color-blue;
+        transform: rotate(135deg);
+      }
+    }
+
+    .navigation__popup-wrapper {
+      display: block;
+    }
+  }
 }
 
 .navigation__toggle {
   position: relative;
+  margin-right: 10px;
+  cursor: pointer;
 
-  &:before {
-    content: "k";
+  &::before {
+    content: attr(data-first-letter);
     position: absolute;
-    width: 40px;
-    height: 40px;
+    left: -40px;
+    top: -5px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 300;
     color: @font-color-white;
     text-transform: uppercase;
-    background-color: @background-color-blue;
+    text-align: center;
     border-radius: 50%;
+    background-color: @background-color-blue;
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid @border-color-light-gray;
-    border-bottom: 1px solid @border-color-light-gray;
+    right: -8px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid @border-color-gray;
+    border-bottom: 2px solid @border-color-gray;
     transform: rotate(-45deg);
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    color: @font-color-base;
+    cursor: inherit;
+  }
+
+  &:hover {
+    &::after {
+      border-left-color: @border-color-light-gray;
+      border-bottom-color: @border-color-light-gray;
+    }
+  }
+}
+
+.navigation__popup-wrapper {
+  position: absolute;
+  display: none;
+  width: 261px;
+  background-color: @background-color-white;
+  padding: 24px 20px 8px 32px;
+  top: 100px;
+  left: -17px;
+  border-radius: 5px;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: 8px;
+    top: -4px;
+    background-color: @background-color-white;
+    box-shadow: 1px -1px 1px 0 rgba(0, 0, 0, 0.1);
+    transform: rotate(-45deg);
+  }
+}
+
+.navigation__popup {
+  .reset-list();
+}
+
+.navigation__popup-item {
+  padding-bottom: 18px;
+  line-height: 22px;
+
+  a {
+    color: @font-color-base;
+
+    &:hover {
+      color: @font-color-blue;
+    }
+
+    &:active {
+      color: @font-color-base;
+    }
   }
 }
