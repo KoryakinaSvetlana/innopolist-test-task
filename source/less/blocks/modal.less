@@ -8,7 +8,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
 
   h2 {
@@ -30,6 +30,10 @@
     background-position: top 75px center;
     background-repeat: no-repeat;
   }
+
+  &--open {
+    display: block;
+  }
 }
 
 .modal-close {
@@ -48,4 +52,12 @@
 
 .modal__button-wrapper {
   text-align: center;
+}
+
+.modal__content {
+  padding: 0 40px 20px;
+
+  p {
+    margin: 0;
+  }
 }

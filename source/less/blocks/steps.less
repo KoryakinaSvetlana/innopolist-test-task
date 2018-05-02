@@ -9,6 +9,11 @@
 .steps__item {
   list-style: none;
 
+
+  &--hidden {
+    display: none;
+  }
+
   &::before {
     counter-increment: listCounter;
     content: counter(listCounter);

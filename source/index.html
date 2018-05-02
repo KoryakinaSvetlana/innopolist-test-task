@@ -4,41 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style.min.css" rel="stylesheet" />
   <title>Криптографический стенд</title>
 </head>
 <body>
   <!--SVG Sprite-->
   <div style="display:none">
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <symbol id="sign-icon" viewBox="0 0 28 28">
-        <path d="M23,0H5C2.2,0,0,2.2,0,5v18c0,2.8,2.2,5,5,5h18c2.8,0,5-2.2,5-5V5C28,2.2,25.8,0,23,0z M25,22c0,1.7-1.3,3-3,3
-        H6c-1.7,0-3-1.3-3-3V6c0-1.7,1.3-3,3-3h16c1.7,0,3,1.3,3,3V22z"/>
-        <path d="M13,14l-1.2-1.2c-0.7-0.7-1.8-0.7-2.5,0l0,0c-0.7,0.7-0.7,1.8,0,2.5l1.2,1.2l1.3,1.3c0.7,0.7,1.8,0.7,2.5,0
-        c0,0,0,0,0,0l1.3-1.3L20,12c0.7-0.7,0.7-1.8,0-2.5l0,0c-0.7-0.7-1.8-0.7-2.5,0L13,14z"/>
-      </symbol>
-      <symbol id="check-icon" viewBox="0 0 31 31">
-        <path d="M10.6,12.3l-1-1c-0.6-0.6-1.5-0.6-2.1,0c0,0,0,0,0,0l0,0c-0.6,0.6-0.6,1.6,0,2.2l1,1l1.1,1.1
-        c0.6,0.6,1.5,0.6,2.1,0c0,0,0,0,0,0l1.1-1.1l3.8-3.9c0.6-0.6,0.6-1.6,0-2.2l0,0c-0.6-0.6-1.5-0.6-2.1,0c0,0,0,0,0,0L10.6,12.3z
-        M20.6,3.7C16-1,8.4-1,3.7,3.7C-1,8.4-1,15.9,3.7,20.6C7.8,24.7,14.2,25.3,19,22c0.1,0.5,0.3,0.9,0.7,1.3l6.8,6.8c1,1,2.6,1,3.6,0.1
-        c1-1,1-2.6,0.1-3.6c0,0,0,0,0,0l-6.8-6.8c-0.3-0.3-0.8-0.6-1.3-0.7C25.3,14.2,24.7,7.8,20.6,3.7z M18.5,18.5C15,22,9.3,22,5.9,18.5
-        C2.4,15,2.4,9.3,5.9,5.9c3.5-3.5,9.1-3.5,12.6,0c0,0,0,0,0,0C22,9.3,22,15,18.5,18.5L18.5,18.5z"/>
-      </symbol>
-      <symbol id="encode-icon" viewBox="0 0 22 29">
-        <path d="M2.5,9.4v2.9H2.3c-1.2,0-2.3,1-2.3,2.2v12.2C0,28,1,29,2.3,29h17.5c1.2,0,2.3-1,2.3-2.2V14.5
-        c0-1.2-1-2.2-2.3-2.2c0,0,0,0,0,0h-0.1V9.4c0-4.7-3.9-8.6-8.6-8.6C6.3,0.8,2.5,4.7,2.5,9.4z M12.3,21.2c-0.2,0.1-0.2,0.3-0.2,0.4
-        c0,0.9,0,1.8,0,2.7l0,0c0,0.4-0.2,0.7-0.5,0.9c-0.5,0.3-1.2,0.1-1.5-0.4c-0.1-0.2-0.1-0.3-0.1-0.5l0,0c0-0.9,0-1.8,0-2.7
-        c0-0.2-0.1-0.3-0.2-0.4c-0.8-0.6-1.1-1.6-0.7-2.5c0.4-0.9,1.4-1.4,2.3-1.2c1,0.2,1.7,1,1.8,2C13.2,20.2,12.9,20.8,12.3,21.2
-        L12.3,21.2z M6.2,9.4c0.1-2.7,2.3-4.8,5-4.7c2.6,0.1,4.7,2.1,4.7,4.7v2.9H6.2V9.4z"/>
-      </symbol>
-      <symbol id="decode-icon" viewBox="0 0 22 28">
-        <path d="M2.5,9.4v2.9H2.3c-1.2,0-2.3,1-2.3,2.2v12.2C0,28,1,29,2.3,29h17.5c1.2,0,2.3-1,2.3-2.2V14.6
-        c0-1.2-1-2.2-2.3-2.2c0,0,0,0,0,0h-0.1V9.4c0-4.7-3.9-8.6-8.6-8.6C6.3,0.8,2.5,4.7,2.5,9.4z M12.3,21.2c-0.2,0.1-0.2,0.3-0.2,0.4
-        c0,0.9,0,1.8,0,2.7l0,0c0,0.4-0.2,0.7-0.5,0.9c-0.5,0.3-1.2,0.1-1.5-0.4c-0.1-0.2-0.1-0.3-0.1-0.5l0,0c0-0.9,0-1.8,0-2.7
-        c0-0.2-0.1-0.3-0.2-0.4c-0.8-0.6-1.1-1.6-0.7-2.5c0.4-0.9,1.4-1.4,2.3-1.2c1,0.2,1.8,1,1.8,2C13.2,20.2,12.9,20.8,12.3,21.2
-        L12.3,21.2z M6.2,9.4c0.1-2.7,2.3-4.8,4.9-4.7c2.6,0.1,4.7,2.1,4.7,4.7v2.9H6.2V9.4z M1,8h7v4H1V8z"/>
-      </symbol>
-    </svg>
+    <include src="build/img/sprite.svg"></include>
   </div>
   <header class="page-header">
     <div class="container container--flex">
@@ -46,7 +18,7 @@
         <img src="img/logo.png" alt="logo">
         <span>CRYPTOGRAMM</span>
       </div>
-      <nav class="navigation navigation--open">
+      <nav class="navigation">
         <div class="navigation__toggle" data-first-letter="k">
           <button>konstantin_konstantinopolsky</button>
         </div>
@@ -90,7 +62,7 @@
               <div class="file-actions__column">
                 <h3>Выберите из списка:</h3>
                 <div class="file-actions__table-wrapper simplebar">
-                  <table class="file-actions__table">
+                  <table class="file-actions__table" id="preloadFilesTable">
                     <tr>
                       <td class="checkbox"><input type="checkbox" id="id1"><label for="id1"></label></td>
                       <td>
@@ -125,10 +97,10 @@
               <div  class="file-actions__column">
                 <h4>Загруженные файлы:</h4>
 
-                <div class="file-actions__table-wrapper file-actions__table-wrapper--wide simplebar">
-                  <table class="file-actions__table">
-                    <tr class="file-actions__checked-item">
-                      <td class="checkbox"><input type="checkbox" id="id5" checked><label for="id5"></label></td>
+                <div class="file-actions__table-wrapper file-actions__table-wrapper--wide file-actions__table-wrapper--hidden simplebar" id="uploadFilesTableContainer">
+                  <table class="file-actions__table" id="uploadFilesTable">
+                    <tr>
+                      <td class="checkbox"><input type="checkbox" id="id5"><label for="id5"></label></td>
                       <td>
                         <span class="file file--txt">Мой текстовый документ.txt</span>
                         <span>29 байт</span>
@@ -173,7 +145,7 @@
             </div>
 
           </li>
-          <li class="steps__item">
+          <li class="steps__item steps__item--hidden">
             <h2>Выберите операцию</h2>
             <ul class="steps__operations">
               <li class="steps__operation steps__operation--sign">
@@ -214,7 +186,7 @@
               </li>
             </ul>
           </li>
-          <li class="steps__item">
+          <li class="steps__item steps__item--hidden">
             <h2>Выберите вид подписи</h2>
             <div class="sign-kind__wrapper">
               <div class="sign-kind">
@@ -236,7 +208,7 @@
           </li>
         </ol>
         <div class="page-context__button-wrapper">
-          <button class="button">Выполнить операцию</button>
+          <button class="button" id="apply" disabled>Выполнить операцию</button>
         </div>
       </div>
 
@@ -257,8 +229,9 @@
 
   <div class="modal modal--success">
     <h2>Операция выполнена успешно</h2>
+    <div class="modal__content"></div>
     <div class="modal__button-wrapper">
-      <button class="button">Начать процесс заново</button>
+      <button class="button" id="newStart">Начать процесс заново</button>
     </div>
     <button class="modal-close" type="button">
       <span class="visually-hidden">Закрыть</span>
@@ -266,7 +239,7 @@
   </div>
 
   <script src="scripts/lib/jquery-3.3.1.min.js"></script>
-  <script src="scripts/simplebar.js"></script>
-  <script src="scripts/script.js"></script>
+  <script src="scripts/simplebar.min.js"></script>
+  <script src="scripts/script.min.js"></script>
 </body>
 </html>

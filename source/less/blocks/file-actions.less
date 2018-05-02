@@ -53,6 +53,10 @@
       padding: 16px 10px 19px 20px;
     }
 
+    &:nth-child(2) {
+      width: ~"calc(100%  - 180px)";
+    }
+
     &:last-child {
       width: 125px;
       padding-top: 20px;
@@ -117,5 +121,9 @@
         margin-left: 20px;
       }
     }
+  }
+
+  &--hidden {
+    display: none;
   }
 }

@@ -22,8 +22,7 @@
 
 .navigation__toggle {
   position: relative;
-  margin-right: 10px;
-  cursor: pointer;
+  margin-right: 0;
 
   &::before {
     content: attr(data-first-letter);
@@ -45,7 +44,7 @@
   &::after {
     content: "";
     position: absolute;
-    right: -8px;
+    right: 2px;
     top: 8px;
     width: 6px;
     height: 6px;
@@ -56,16 +55,19 @@
 
   button {
     border: none;
+    padding-right: 15px;
     background-color: transparent;
     font-family: inherit;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.1px;
     color: @font-color-base;
-    cursor: inherit;
+    outline: none;
+    cursor: pointer;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &::after {
       border-left-color: @border-color-light-gray;
       border-bottom-color: @border-color-light-gray;
